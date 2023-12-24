@@ -14,7 +14,10 @@ import ru.demo.model.Role;
 import ru.demo.model.User;
 import ru.demo.repositories.UserRepositories;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -85,6 +88,7 @@ public class UserServicesImpl implements UserServices{
             throw new UsernameNotFoundException(String.format("User %s not found", username));
         }
     }
+
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(@NotNull Set<Role> roles) {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getRoleName())).collect(Collectors.toList());
     }

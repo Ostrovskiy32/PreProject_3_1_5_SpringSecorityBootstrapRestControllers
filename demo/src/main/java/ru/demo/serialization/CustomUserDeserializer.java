@@ -24,7 +24,7 @@ public class CustomUserDeserializer extends JsonDeserializer<User> {
 
 
     @Override
-    public User deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+    public User deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
 
         JsonNode node = jsonParser.getCodec().readTree(jsonParser);
         User user = new User();

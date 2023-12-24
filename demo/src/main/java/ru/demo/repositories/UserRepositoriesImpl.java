@@ -27,6 +27,7 @@ public class UserRepositoriesImpl implements UserRepositories {
         return entityManager.find(User.class, id);
     }
 
+    @Override
     public boolean isUsernameUniqueForUpdate(String username, Long currentUserId) {
 
         List<Long> userIds = entityManager.createQuery(
